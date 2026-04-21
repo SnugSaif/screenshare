@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0; background:black;">
+    <img id="screen" style="width:100%;" />
+
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script>
+        const socket = io();
+
+        socket.on('screen', (data) => {
+            document.getElementById('screen').src =
+                "data:image/jpeg;base64," + data;
+        });
+    </script>
+</body>
+</html>
